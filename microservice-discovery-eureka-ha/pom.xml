@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.gary</groupId>
+        <artifactId>microservice-spring-cloud</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>microservice-discovery-eureka-ha</artifactId>
+    <packaging>jar</packaging>
+    <description>Demo project for Spring Boot</description>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--<plugin>-->
+                <!--<groupId>com.spotify</groupId>-->
+                <!--<artifactId>docker-maven-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--&lt;!&ndash;设置在执行maven 的install时构建镜像&ndash;&gt;-->
+                    <!--<execution>-->
+                        <!--<id>build-image</id>-->
+                        <!--<phase>install</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>build</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash;安装了docker的主机，并且打开了api remote接口设置&ndash;&gt;-->
+                    <!--<dockerHost>http://192.168.50.13:5678</dockerHost>-->
+                    <!--<pushImage>true</pushImage>&lt;!&ndash;设置上传镜像到私有仓库，需要docker设置指定私有仓库地址&ndash;&gt;-->
+                    <!--&lt;!&ndash;镜像名称&ndash;&gt;-->
+                    <!--<imageName>${docker.repostory}/${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>-->
+                    <!--&lt;!&ndash;镜像的基础版本&ndash;&gt;-->
+                    <!--<baseImage>java:openjdk-8-jdk-alpine</baseImage>-->
+                    <!--&lt;!&ndash;镜像启动参数&ndash;&gt;-->
+                    <!--<entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>-->
+                    <!--<resources>-->
+                        <!--<resource>-->
+                            <!--<targetPath>/</targetPath>-->
+                            <!--<directory>${project.build.directory}</directory>-->
+                            <!--<include>${project.build.finalName}.jar</include>-->
+                        <!--</resource>-->
+                    <!--</resources>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
+    </build>
+
+</project>
